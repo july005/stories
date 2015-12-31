@@ -30,14 +30,16 @@ class StoriesController < ApplicationController
     session[:story_params].deep_merge!(params[:story]) if params[:story]
     @story = Story.new(session[:story_params])
     @story.current_question = session[:story_question] 
-    if params[:back_button]
-      @story.previous_question
-    elsif @story.last_question?
-      @story.save
-    else
-      @story.next_question
+    if @story.valid?
+      if params[:back_button]
+        @story.previous_question
+      elsif @story.last_question?
+        @story.save if @story.all_valid?
+      else
+        @story.next_question
+      end
+      session[:story_question] = @story.current_question
     end
-    session[:story_question] = @story.current_question
     if @story.new_record?
       render "new"
     else
