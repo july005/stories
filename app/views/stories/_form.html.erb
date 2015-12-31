@@ -2,7 +2,6 @@
   <% if @story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
-
       <ul>
       <% @story.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -10,71 +9,9 @@
       </ul>
     </div>
   <% end %>
+  
+  <%= render "#{@story.current_question}", :f => f %>
 
-  <div class="field">
-    <%= f.label :char_name %><br>
-    <%= f.text_field :char_name %>
-  </div>
-  <div class="field">
-    <%= f.label :char_age %><br>
-    <%= f.number_field :char_age %>
-  </div>
-  <div class="field">
-    <%= f.label :char_glasses %><br>
-    <%= f.check_box :char_glasses %>
-  </div>
-  <div class="field">
-    <%= f.label :char_haircolor %><br>
-    <%= f.text_field :char_haircolor %>
-  </div>
-  <div class="field">
-    <%= f.label :char_friend_name %><br>
-    <%= f.text_field :char_friend_name %>
-  </div>
-  <div class="field">
-    <%= f.label :char_friend_why %><br>
-    <%= f.text_area :char_friend_why %>
-  </div>
-  <div class="field">
-    <%= f.label :char_activity %><br>
-    <%= f.text_field :char_activity %>
-  </div>
-  <div class="field">
-    <%= f.label :char_activity_whylove %><br>
-    <%= f.text_area :char_activity_whylove %>
-  </div>
-  <div class="field">
-    <%= f.label :char_activity_everdifficult %><br>
-    <%= f.check_box :char_activity_everdifficult %>
-  </div>
-  <div class="field">
-    <%= f.label :char_activity_whydifficult %><br>
-    <%= f.text_area :char_activity_whydifficult %>
-  </div>
-  <div class="field">
-    <%= f.label :char_feelings %><br>
-    <%= f.text_field :char_feelings %>
-  </div>
-  <div class="field">
-    <%= f.label :char_action_from_feeling %><br>
-    <%= f.text_field :char_action_from_feeling %>
-  </div>
-  <div class="field">
-    <%= f.label :char_result_from_action %><br>
-    <%= f.text_field :char_result_from_action %>
-  </div>
-  <div class="field">
-    <%= f.label :char_learn_from_action %><br>
-    <%= f.text_field :char_learn_from_action %>
-  </div>
-  <div class="field">
-    <%= f.label :char_action_from_learn %><br>
-    <%= f.text_field :char_action_from_learn %>
-  </div>
-  <div class="field">
-    <%= f.label :story_title %><br>
-    <%= f.text_field :story_title %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
