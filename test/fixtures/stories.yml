@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  char_name: MyString
+  char_age: 1
+  char_glasses: false
+  char_haircolor: MyString
+  char_friend_name: MyString
+  char_friend_why: MyText
+  char_activity: MyString
+  char_activity_whylove: MyText
+  char_activity_everdifficult: false
+  char_activity_whydifficult: MyText
+  char_feelings: MyString
+  char_action_from_feeling: MyString
+  char_result_from_action: MyString
+  char_learn_from_action: MyString
+  char_action_from_learn: MyString
+  story_title: MyString
+
+two:
+  char_name: MyString
+  char_age: 1
+  char_glasses: false
+  char_haircolor: MyString
+  char_friend_name: MyString
+  char_friend_why: MyText
+  char_activity: MyString
+  char_activity_whylove: MyText
+  char_activity_everdifficult: false
+  char_activity_whydifficult: MyText
+  char_feelings: MyString
+  char_action_from_feeling: MyString
+  char_result_from_action: MyString
+  char_learn_from_action: MyString
+  char_action_from_learn: MyString
+  story_title: MyString
