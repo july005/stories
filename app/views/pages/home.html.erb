@@ -1,8 +1,25 @@
-<div class="jumbotron center">
-	<h1>Oh My Stories!</h1>
-	<p>
-	  <%= link_to "Let's Write!", new_story_path, class: "btn btn-info btn-lg" %>
-	  <%= link_to "Let's Read!", stories_path, class: "btn btn-warning btn-lg" %>
-	</p>
 
-</div>
+<html lang="en">  
+<head> </head>
+
+  <body>
+    <div class="jumbotron center">
+      <h1><strong>Oh My Stories!</strong></h1>
+      <h2>I create the stories of my dreams</h2>
+		  
+      <div class="row">
+		    <div class="col-xs-6">
+          <div class="imagetwist">
+          <%= link_to image_tag("dreaming.png"), new_story_path %>
+          </div>
+		    </div>
+        <div class="col-xs-6">
+		      <div class="imageUNtwist">
+           <%= link_to "Let's Read!", stories_path, class: "btn btn-warning btn-lg" %>
+          </div>
+		    </div>
+      </div>
+
+   </div>
+
+  </body>
