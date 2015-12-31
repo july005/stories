@@ -4,21 +4,21 @@ class Story < ActiveRecord::Base
 	# Another way to write these is : 	
 	# validates_presence_of :char_name, if => :question01?
 
-	validates_presence_of :char_name, if => lambda { |o| o.current_question == question01}
-	validates_presence_of :char_age, if => lambda { |o| o.current_question == question02}
-	validates_presence_of :char_glasses, if => lambda { |o| o.current_question == question03}
-	validates_presence_of :char_haircolor, if => lambda { |o| o.current_question == question04}
-	validates_presence_of :char_friend_name, if => lambda { |o| o.current_question == question05}
-	validates_presence_of :char_friend_why, if => lambda { |o| o.current_question == question06}
-	validates_presence_of :char_activity, if => lambda { |o| o.current_question == question07}
-	validates_presence_of :char_activity_whylove, if => lambda { |o| o.current_question == question08}
-	validates_presence_of :char_activity_everdifficult, if => lambda { |o| o.current_question == question10}
-	validates_presence_of :char_feelings, if => lambda { |o| o.current_question == question11}
-	validates_presence_of :char_action_from_feeling, if => lambda { |o| o.current_question == question12}
-	validates_presence_of :char_result_from_action, if => lambda { |o| o.current_question == question13}
-	validates_presence_of :char_learn_from_action, if => lambda { |o| o.current_question == question14}
-	validates_presence_of :char_action_from_learn, if => lambda { |o| o.current_question == question15}
-	validates_presence_of :story_title, if => lambda { |o| o.current_question == question16}
+	validates_presence_of :char_name, :if => lambda { |o| o.current_question == "question01"}
+	validates_presence_of :char_age, :if => lambda { |o| o.current_question == "question02"}
+	validates_inclusion_of :char_glasses, in: [true, false], :if => lambda { |o| o.current_question == "question03"}
+	validates_presence_of :char_haircolor, :if => lambda { |o| o.current_question == "question04"}
+	validates_presence_of :char_friend_name, :if => lambda { |o| o.current_question == "question05"}
+	validates_presence_of :char_friend_why, :if => lambda { |o| o.current_question == "question06"}
+	validates_presence_of :char_activity, :if => lambda { |o| o.current_question == "question07"}
+	validates_presence_of :char_activity_whylove, :if => lambda { |o| o.current_question == "question08"}
+	validates_presence_of :char_activity_everdifficult, :if => lambda { |o| o.current_question == "question10"}
+	validates_presence_of :char_feelings, :if => lambda { |o| o.current_question == "question11"}
+	validates_presence_of :char_action_from_feeling, :if => lambda { |o| o.current_question == "question12"}
+	validates_presence_of :char_result_from_action, :if => lambda { |o| o.current_question == "question13"}
+	validates_presence_of :char_learn_from_action, :if => lambda { |o| o.current_question == "question14"}
+	validates_presence_of :char_action_from_learn, :if => lambda { |o| o.current_question == "question15"}
+	validates_presence_of :story_title, :if => lambda { |o| o.current_question == "question16"}
 
 	def current_question
 		@current_question || questions.first
@@ -45,7 +45,7 @@ class Story < ActiveRecord::Base
 	end
 
 	def all_valid?
-		questions.all? do |step|
+		questions.all? do |question|
 			self.current_question = question
 			valid?
 		end
