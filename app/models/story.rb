@@ -21,5 +21,8 @@ class Story < ActiveRecord::Base
 		current_question == questions.first
 	end
 
+	def last_question?
+		current_question == questions.last
+	end
 
 end

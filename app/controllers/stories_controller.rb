@@ -14,7 +14,10 @@ class StoriesController < ApplicationController
 
   # GET /stories/new
   def new
+    session[:story_params] ||= {}
     @story = Story.new
+    @story = Story.new(session[:story_params])
+    @story.current_question = session[:story_question] 
   end
 
   # GET /stories/1/edit
@@ -24,15 +27,24 @@ class StoriesController < ApplicationController
   # POST /stories
   # POST /stories.json
   def create
-    @story = Story.new(story_params)
+    session[:story_params].deep_merge!(params[:story]) if params[:story]
+    @story = Story.new(session[:story_params])
     @story.current_question = session[:story_question] 
     if params[:back_button]
       @story.previous_question
+    elsif @story.last_question?
+      @story.save
     else
       @story.next_question
     end
     session[:story_question] = @story.current_question
-    render "new"
+    if @story.new_record?
+      render "new"
+    else
+      session[:story_question] = session[:story_params] = nil
+      flash[:notice] = "Congrats on your new story!"
+      redirect_to @story
+    end
   end
 
 
