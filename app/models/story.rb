@@ -13,4 +13,13 @@ class Story < ActiveRecord::Base
 		self.current_question = questions[questions.index(current_question)+1]
 	end
 
+	def previous_question
+		self.current_question = questions[questions.index(current_question)-1]
+	end
+
+	def first_question?
+		current_question == questions.first
+	end
+
+
 end

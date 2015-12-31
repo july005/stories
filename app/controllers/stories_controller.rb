@@ -26,7 +26,11 @@ class StoriesController < ApplicationController
   def create
     @story = Story.new(story_params)
     @story.current_question = session[:story_question] 
-    @story.next_question
+    if params[:back_button]
+      @story.previous_question
+    else
+      @story.next_question
+    end
     session[:story_question] = @story.current_question
     render "new"
   end
