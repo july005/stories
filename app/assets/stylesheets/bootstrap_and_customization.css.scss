@@ -17,3 +17,115 @@ $jumbotron-bg: 								white;
 .navbar-brand {
 	font-weight: bold;
 }
+
+.navbar, .navbar-inner { height: 70px !important }
+
+$body-bg:                         #bee9e4;
+$font-family-sans-serif:          'Amatic SC', cursive;
+$navbar-default-bg:               #BEE9E4;
+$navbar-default-brand-color:      black;
+$nav-link-padding:                7px 4px;
+$navbar-default-link-color:       black;
+$navbar-default-link-hover-color: white;
+
+$brand-primary:                   #d86c70;
+$jumbotron-bg:                    white;
+$btn-primary-color:               white;
+$btn-font-weight:                 800;
+
+$btn-success-bg:                  #38B0DE;
+$btn-success-color:               white;
+
+$btn-warning-bg:                  orange;
+
+$btn-storypage-bg:                #b19cd9;
+
+$btn-default-bg:                  white;
+$btn-default-color:               #ffb347;
+
+.imagetwist:hover img {
+  transform: rotate(20deg);
+  transition: all 0.3s ease 0s;
+  width: 65%
+}
+.imageUNtwist:hover img {
+  transform: rotate(-20deg);
+  transition: all 0.3s ease 0s;
+  width: 65%
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+  padding-right:30px;
+}
+body {padding:30px;}
+
+body { padding-top: 140px; }
+
+$font-size-base:                  34px;
+$navbar-height:                   60px;
+
+.div 
+
+.glyphicon {
+   font-family:'Glyphicons Halflings' !important;
+   // more css comes along here
+}
+.field_with_errors {
+  padding: 2px;
+  background-color: #8470ff;
+  display: inline-block;
+}
+@import "bootstrap-sprockets";
+@import 'bootstrap';
+
+
+
+
+
+.center {
+     text-align: center;
+}
+
+.navbar-brand {
+     font-weight: bold;
+}
+.pt-perspective {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 1200px;
+    transform-style: preserve-3d;
+}
+ 
+.pt-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    overflow: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+}
+ 
+.pt-page-current,
+.no-js .pt-page {
+    visibility: visible;
+}
+ 
+.no-js body {
+    overflow: auto;
+}
+ 
+.pt-page-ontop {
+    z-index: 999;
+}
+
+.alert-success {
+color: black;
+background-color: #BEE9E4;
+border-color: white;
+}
+
