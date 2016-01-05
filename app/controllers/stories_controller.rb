@@ -1,31 +1,23 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
 
-  # GET /stories
-  # GET /stories.json
   def index
     @stories = Story.all
   end
 
-  # GET /stories/1
-  # GET /stories/1.json
   def show
+    @story = Story.find(params[:id])
   end
 
-  # GET /stories/new
   def new
     session[:story_params] ||= {}
-    @story = Story.new
     @story = Story.new(session[:story_params])
     @story.current_question = session[:story_question] 
   end
 
-  # GET /stories/1/edit
   def edit
   end
 
-  # POST /stories
-  # POST /stories.json
   def create
     session[:story_params].deep_merge!(params[:story]) if params[:story]
     @story = Story.new(session[:story_params])
@@ -54,9 +46,6 @@ class StoriesController < ApplicationController
 
 
 
-
-  # PATCH/PUT /stories/1
-  # PATCH/PUT /stories/1.json
   def update
     respond_to do |format|
       if @story.update(story_params)
@@ -69,8 +58,6 @@ class StoriesController < ApplicationController
     end
   end
 
-  # DELETE /stories/1
-  # DELETE /stories/1.json
   def destroy
     @story.destroy
     respond_to do |format|
