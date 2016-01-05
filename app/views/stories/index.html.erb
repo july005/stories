@@ -1,57 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Stories</h1>
+  <h1>My Stories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Char name</th>
-      <th>Char age</th>
-      <th>Char glasses</th>
-      <th>Char haircolor</th>
-      <th>Char friend name</th>
-      <th>Char friend why</th>
-      <th>Char activity</th>
-      <th>Char activity whylove</th>
-      <th>Char activity everdifficult</th>
-      <th>Char activity whydifficult</th>
-      <th>Char feelings</th>
-      <th>Char action from feeling</th>
-      <th>Char result from action</th>
-      <th>Char learn from action</th>
-      <th>Char action from learn</th>
-      <th>Story title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div id="stories" class="transitions-enabled">
+      <% @stories.each do |story| %>
+        <div class="box panel panel-default">
+          <%= link_to image_tag("reading.jpg"), story %>
+          <%= link_to story.story_title, story %>
+            <div class="panel-body">
+              <div class="actions">
+                <%= link_to edit_story_path(story) do %>
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Edit
+                <% end %>
+                <%= link_to story, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  Delete
+                <% end %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    </div>
 
-  <tbody>
-    <% @stories.each do |story| %>
-      <tr>
-        <td><%= story.char_name %></td>
-        <td><%= story.char_age %></td>
-        <td><%= story.char_glasses %></td>
-        <td><%= story.char_haircolor %></td>
-        <td><%= story.char_friend_name %></td>
-        <td><%= story.char_friend_why %></td>
-        <td><%= story.char_activity %></td>
-        <td><%= story.char_activity_whylove %></td>
-        <td><%= story.char_activity_everdifficult %></td>
-        <td><%= story.char_activity_whydifficult %></td>
-        <td><%= story.char_feelings %></td>
-        <td><%= story.char_action_from_feeling %></td>
-        <td><%= story.char_result_from_action %></td>
-        <td><%= story.char_learn_from_action %></td>
-        <td><%= story.char_action_from_learn %></td>
-        <td><%= story.story_title %></td>
-        <td><%= link_to 'Show', story %></td>
-        <td><%= link_to 'Edit', edit_story_path(story) %></td>
-        <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Story', new_story_path %>
+  <div class="center">
+    <%= link_to 'New Story', new_story_path, class: "btn btn-warning btn-lg" %>
+  </div>

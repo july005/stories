@@ -10,8 +10,51 @@ $jumbotron-bg: 								white;
 
 @import 'bootstrap';
 
+img {
+    width: 100%;
+    height: auto;
+}
+
+#stories {
+  margin: 0 auto;
+}
+
+.box {
+  margin: 5px;
+  width: 214px;
+}
+
+.box img {
+  width: 100%;
+}
+
+
+
+
+
+
 .center {
 	text-align: center;
+}
+
+.center-table {
+  margin: 0 auto !important;
+  float: none !important;
+}
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top30 { margin-top:30px; }
+.top90 { margin-top:90px; }
+
+.book-display {
+  background-color: #d3d2b5;
+  width: 300px;
+  padding: 25px;
+  border: 13px solid #cabd80;
+  margin: 25px;
 }
 
 .navbar-brand {
