@@ -1,25 +1,36 @@
 <p id="notice"><%= notice %></p>
 
   <h2> <%= @story.story_title %> </h2>
-  <p>Once upon a time 
+<div class="jumbotron">
+  <div class="book-display">
+    Once upon a time 
     <%= @story.char_name %>, who had 
-    <%=h @story.char_haircolor %> hair and DID OR DID NOT wear glasses, 
+    <%=h @story.char_haircolor %> hair and [[DID OR DID NOT]] wear glasses, loved 
     <%= @story.char_activity %> with 
-    <%= @story.char_friend_name %>. They loved to 
+    <%= @story.char_friend_name %>. They loved  
     <%= @story.char_activity %> because 
-    <%= @story.char_activity_whylove %>. One time it was hard for 
+    <%= @story.char_activity_whylove %>. 
+  </div>
+  
+  <div class="book-display">
+    One time it was hard for 
     <%= @story.char_name %> 
-    <%= @story.char_activity %> because <%= @story.char_activity_whydifficult %>
+    <%= @story.char_activity %> because 
+    <%= @story.char_activity_whydifficult %>, which made 
+    <%= @story.char_name %> feel
+    <%= @story.char_feelings %>. Because 
+    <%= @story.char_name %> felt <%= @story.char_feelings %>, 
+    <%= @story.char_action_from_feeling %>!  
+  </div>
 
- 
-<%= @story.char_activity_whydifficult %>
-<%= @story.char_feelings %>
-<%= @story.char_action_from_feeling %>
-<%= @story.char_result_from_action %>
-<%= @story.char_learn_from_action %>
-<%= @story.char_action_from_learn %>
+  <div class="book-display">
+    When <%= @story.char_action_from_feeling %>, 
+    <%= @story.char_result_from_action %>. 
+    <%= @story.char_name %> realized, 
+    <%= @story.char_learn_from_action %>. Knowing this, 
+    <%= @story.char_action_from_learn %>, and it seemed everything would turn out just fine next time. 
+  </div>
+</div>
 
-  </p>
-
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+<%= link_to 'Edit', edit_story_path(@story), class: "btn btn-warning btn-lg" %> |
+<%= link_to 'Back', stories_path, class: "btn btn-danger btn-lg" %>
