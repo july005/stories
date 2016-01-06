@@ -1,4 +1,4 @@
-  <h2>(Q6) <%= @story.char_name %> likes <%= @story.char_friend_name %> because...</h2>
+  <h2><%= image_tag("boyhead.jpg", :alt => "Face") %> (Q6) <%= @story.char_name %> likes having <%= @story.char_friend_name %> as a friend because...</h2>
   <div class="field">
     <%= f.text_area :char_friend_why %>
   </div>

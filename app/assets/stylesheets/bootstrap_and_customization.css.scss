@@ -11,8 +11,10 @@ $jumbotron-bg: 								white;
 @import 'bootstrap';
 
 img {
-    width: 100%;
-    height: auto;
+  width: 70%;
+  height: auto;
+  max-width: 200px;
+  max-height: 200px;
 }
 
 #stories {

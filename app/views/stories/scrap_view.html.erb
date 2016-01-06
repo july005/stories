@@ -140,3 +140,28 @@ test:
 production:
   <<: *default
   database: db/my_database_production
+
+
+
+<nav class="navbar navbar-default" role="navigation">   
+
+  <!-- Brand and toggle grouped for better mobile display -->   
+  <div class="navbar-header">     
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">       
+      <span class="sr-only">Toggle navigation</span>       
+      <span class="icon-bar"></span>       
+      <span class="icon-bar"></span>       
+      <span class="icon-bar"></span>     
+    </button>     
+    <%= link_to "New Story", new_story_path, class: "btn btn-default btn-lg" %>
+  </div>    
+
+  <!-- Collects nav links, forms, and other content for toggling -->   
+  <div class="collapse navbar-collapse navbar-ex1-collapse">     
+    <ul class="nav navbar-nav navbar-right">       
+    <%= link_to "Log in", class: "btn btn-default btn-lg" %>
+    <%= link_to "Sign up", class: "btn btn-primary btn-lg" %>   
+    </ul>   
+  </div>
+
+</nav>

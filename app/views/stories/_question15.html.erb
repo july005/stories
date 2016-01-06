@@ -1,4 +1,4 @@
-  <h2>(Q15) What did <%=h @story.char_name %> do next, knowing <%= @story.char_learn_from_action %>?</h2>
+  <h2><%= image_tag("girlhead.jpg", :alt => "Face") %> (Q15) What did <%=h @story.char_name %> do next, knowing <%= @story.char_learn_from_action %>?</h2>
   <div class="field">
     <%= f.label :char_action_from_learn %><br>
     <%= f.text_field :char_action_from_learn %>
